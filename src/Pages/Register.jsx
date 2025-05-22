@@ -38,7 +38,6 @@ const Register = () => {
       return; 
     }
 
-
     createUser(email,password).then((result) => {
        console.log(result);
        Swal.fire({

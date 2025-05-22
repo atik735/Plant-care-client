@@ -6,7 +6,6 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
 
-
 const Login = (e) => {
   const {signInUser,googleSignIn} = useContext(AuthContext)
   const navigate =useNavigate()
@@ -17,7 +16,6 @@ const Login = (e) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
 
   const handleLogin = (e) => {
     e.preventDefault();

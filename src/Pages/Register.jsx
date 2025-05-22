@@ -63,14 +63,7 @@ navigate("/")
     .catch((error) =>{
       console.log(error);
       setErrorMessage(error.message)
-      if (password.pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}") {
-        
-          Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Must be more than 6 characters, including number, lowercase letter, uppercase letter!",
-    });
-      }
+
     })
   };
 

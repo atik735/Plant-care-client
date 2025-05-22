@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../Contexts/AuthContext';
 import Swal from 'sweetalert2';
+import logo from "../assets/logo.png"
 
 const Navbar = () => {
 
@@ -31,27 +32,27 @@ const Navbar = () => {
     	const links = <>
 	<li><NavLink to='/' className={({ isActive }) =>
           isActive
-            ? "text-blue-500 font-bold"
+            ? "text-green-600 font-bold"
             : "text-gray-500"
         }
 >Home</NavLink></li>
 	<li><NavLink to='/allplants' className={({ isActive }) =>
           isActive
-            ? "text-blue-500 font-bold"
+            ? "text-green-600 font-bold"
             : "text-gray-500"
         }
 >All Plants</NavLink></li>
 
 	<li><NavLink to='/addplant' className={({ isActive }) =>
           isActive
-            ? "text-blue-500 font-bold"
+            ? "text-green-600 font-bold"
             : "text-gray-500"
         }
 >Add Plant</NavLink></li>
 
 	<li><NavLink to='/myplants' className={({ isActive }) =>
           isActive
-            ? "text-blue-500 font-bold"
+            ? "text-green-600 font-bold"
             : "text-gray-500"
         }
 >My Plants</NavLink></li>
@@ -72,7 +73,9 @@ const Navbar = () => {
          {links}
       </ul>
     </div>
-    <Link to='/'>PlantCare
+    <Link to='/' className='flex items-center'>
+    <img className='w-10' src={logo} alt="" />
+    <h3 className='font-bold text-xl'>PlantCare</h3>
 </Link>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -116,7 +119,7 @@ const Navbar = () => {
   </div>
 )}
     {user && <div>
-<button onClick={handleSignOut} className="btn btn-sm w-full">
+<button onClick={handleSignOut} className="btn btn-sm w-full text-white bg-green-600 hover:bg-green-700">
             Sign Out
           </button></div>}
           

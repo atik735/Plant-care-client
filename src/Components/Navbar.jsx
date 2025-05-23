@@ -61,7 +61,7 @@ const Navbar = () => {
 
     return (
 
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -74,8 +74,9 @@ const Navbar = () => {
       </ul>
     </div>
     <Link to='/' className='flex items-center'>
-    <img className='w-10' src={logo} alt="" />
-    <h3 className='font-bold text-xl'>PlantCare</h3>
+    <img className='w-10 max-md:w-8 max-sm:w-8' src={logo} alt="" />
+    <h3 className='font-bold text-xl bg-gradient-to-tr text-transparent bg-clip-text from-green-600 to-lime-300 max-md:text-base'>PlantCare</h3> 
+
 </Link>
   </div>
   <div className="navbar-center hidden lg:flex">

@@ -18,12 +18,14 @@ export const router = createBrowserRouter([
       errorElement:<ErrorPage></ErrorPage>,
       children:[{
         index:true,
-        loader:() => fetch("http://localhost:3000/plants"),
+        loader:() => fetch("http://localhost:3000/plants/new"),
         hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
         Component:Home,
       },
       {
         path:"allplants",
+         loader:() => fetch("http://localhost:3000/plants"),
+        hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
         Component:AllPlants
       },
       {

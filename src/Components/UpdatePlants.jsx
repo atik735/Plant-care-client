@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Contexts/AuthContext';
 import Swal from 'sweetalert2';
 import { useParams } from 'react-router';
@@ -6,7 +6,7 @@ import { useParams } from 'react-router';
 const UpdatePlants = () => {
         const {user} = useContext(AuthContext)
         const { id } = useParams();
-    console.log(user);
+    // const [plant, setPlant] = useState(null);
     
         const handleUpdate = (e) => {
         e.preventDefault();
@@ -26,13 +26,14 @@ const UpdatePlants = () => {
         .then(res => res.json())
         .then(data => {
             if (data.modifiedCount) {
+                // setPlant(data)
                 console.log(data);
                 Swal.fire({
-                  title: "Coffe Updated successfully!",
-                  icon: "success",
-                  draggable: true,
-                   timer: 1500
-             })
+                    title: "Coffe Updated successfully!",
+                    icon: "success",
+                    draggable: true,
+                    timer: 1500
+                })
                    form.reset()        
             }
             
@@ -52,7 +53,7 @@ const UpdatePlants = () => {
           <input
             type="text"
             name="photo"
-            defaultValue={user.photoURL}
+            // defaultValue={plant.photo}
             placeholder="https://example.com/plant.jpg"
             className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-green-500"
           />

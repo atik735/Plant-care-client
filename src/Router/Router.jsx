@@ -10,6 +10,8 @@ import AllPlants from "../Pages/AllPlants";
 import AddPlant from "../Pages/AddPlant";
 import MyPlants from "../Pages/MyPlants";
 import PrivateRoute from "../Contexts/PrivateRoute";
+import Details from "../Components/Details";
+import UpdatePlants from "../Components/UpdatePlants";
 
 export const router = createBrowserRouter([
     {
@@ -29,16 +31,36 @@ export const router = createBrowserRouter([
         Component:AllPlants
       },
       {
+        path:"details/:id",
+
+        loader:({params})=> fetch(`http://localhost:3000/plants/${params.id}`),
+
+        hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
+        element:<PrivateRoute>
+          <Details></Details>
+        </PrivateRoute>
+      },
+      {
         path:"addplant",
         element:<PrivateRoute>
           <AddPlant></AddPlant>
         </PrivateRoute>
       },
       {
-        path:"myplants",
+        path: "myplants/email/:email",
+        loader:({params}) => fetch(`http://localhost:3000/plants/email/${params.email}`),
+        hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
         element:<PrivateRoute>
           <MyPlants></MyPlants>
         </PrivateRoute>
+      },
+      {
+        path: "updatePlants/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/plants/${params.id}`),
+
+        hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
+        Component: UpdatePlants,
       },
       {
       path:"/login",

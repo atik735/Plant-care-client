@@ -10,7 +10,7 @@ const Root = () => {
         <Navbar></Navbar>
       </header>
       <main className="min-h-[calc(100vh-116px)]">
-        <div className="w-11/12 mx-auto mt-5 ">
+        <div className="w-11/12 mx-auto my-8 ">
     <Outlet></Outlet>
         </div>
       </main>

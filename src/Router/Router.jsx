@@ -20,20 +20,20 @@ export const router = createBrowserRouter([
       errorElement:<ErrorPage></ErrorPage>,
       children:[{
         index:true,
-        loader:() => fetch("http://localhost:3000/plants/new"),
+        loader:() => fetch("https://plant-care-server-three.vercel.app/plants/new"),
         hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
         Component:Home,
       },
       {
         path:"allplants",
-         loader:() => fetch("http://localhost:3000/plants"),
+         loader:() => fetch("https://plant-care-server-three.vercel.app/plants"),
         hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
         Component:AllPlants
       },
       {
         path:"details/:id",
 
-        loader:({params})=> fetch(`http://localhost:3000/plants/${params.id}`),
+        loader:({params})=> fetch(`https://plant-care-server-three.vercel.app/plants/${params.id}`),
 
         hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
         element:<PrivateRoute>
@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "myplants/email/:email",
-        loader:({params}) => fetch(`http://localhost:3000/plants/email/${params.email}`),
+        loader:({params}) => fetch(`https://plant-care-server-three.vercel.app/plants/email/${params.email}`),
         hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
         element:<PrivateRoute>
           <MyPlants></MyPlants>
@@ -57,7 +57,7 @@ export const router = createBrowserRouter([
       {
         path: "updatePlants/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/plants/${params.id}`),
+          fetch(`https://plant-care-server-three.vercel.app/plants/${params.id}`),
 
         hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
         Component: UpdatePlants,

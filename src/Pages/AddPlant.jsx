@@ -13,7 +13,7 @@ const AddPlant = () => {
         console.log(plantData)
 
         //send plantdata to the db
-        fetch("http://localhost:3000/plants",{
+        fetch("https://plant-care-server-three.vercel.app/plants",{
             method:"POST",
             headers:{
                 "content-type":"application/json"

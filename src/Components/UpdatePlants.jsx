@@ -16,7 +16,7 @@ const UpdatePlants = () => {
         console.log(plantData)
 
          //send updated coffe to the server
-        fetch(`http://localhost:3000/plants/${id}`,{
+        fetch(`https://plant-care-server-three.vercel.app/plants/${id}`,{
             method:"PUT",
             headers:{
                 'content-type': 'application/json'

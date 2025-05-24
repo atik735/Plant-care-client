@@ -18,7 +18,7 @@ const MyPlantsForm = ({plants,ePlants,setEplants}) => {
 
         
     //start deleteing the coffee
-    fetch(`http://localhost:3000/plants/${_id}`,{
+    fetch(`https://plant-care-server-three.vercel.app/plants/${_id}`,{
         method:"DELETE"
     })
     .then(res => res.json())

@@ -6,10 +6,6 @@ A full-stack, mobile-responsive web application to help users efficiently manage
 
 ---
 
-## 📸 Screenshot
-
-![Plant Care Tracker Screenshot](https://i.ibb.co/dJXSKKZ2/banner.jpg)
-
 ---
 
 ## 🧾 Overview

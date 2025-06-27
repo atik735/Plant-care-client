@@ -5,7 +5,7 @@ const AllPlants = () => {
   const [search,setSearch] =useState("")
   const [sortedData,setSortedData] = useState([]);
     const allplants = useLoaderData()
-    console.log(allplants);
+    // console.log(allplants);
     
     useEffect(() =>{
   fetch(`https://plant-care-server-three.vercel.app/plants?searchParams=${search}`)

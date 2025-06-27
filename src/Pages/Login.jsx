@@ -10,7 +10,7 @@ const Login = (e) => {
   const {signInUser,googleSignIn} = useContext(AuthContext)
   const navigate =useNavigate()
   const location = useLocation()
-  console.log(location)
+  // console.log(location)
 
   const emailRef = useRef()
   const [errorMessage, setErrorMessage] = useState("");
@@ -21,14 +21,14 @@ const Login = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     setSuccess(false);
     setErrorMessage("");
 
     signInUser(email,password)
     .then((result) =>{
-      console.log(result.user);
+      // console.log(result.user);
       navigate(location?.state || '/')
       setSuccess(true)
       Swal.fire({
@@ -39,7 +39,7 @@ const Login = (e) => {
 });
     })
     .catch(error =>{
-      console.log(error.message);
+      // console.log(error.message);
       setErrorMessage(error.message)
       Swal.fire({
   icon: "error",
@@ -51,7 +51,7 @@ const Login = (e) => {
   };
 
   const handleReset =() =>{
-    console.log(emailRef.current.value)
+    // console.log(emailRef.current.value)
     const email = emailRef.current.value
     sendPasswordResetEmail(auth,email)
     .then(() =>{
@@ -67,7 +67,7 @@ const Login = (e) => {
     const handleGoogleSignIn =() =>{
       googleSignIn()
       .then((result) =>{
-        console.log(result.user);
+        // console.log(result.user);
         
         navigate(location?.state || '/')
 

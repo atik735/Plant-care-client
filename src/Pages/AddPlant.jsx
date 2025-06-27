@@ -10,7 +10,7 @@ const AddPlant = () => {
         const form = e.target;
         const formData = new FormData(form);
         const plantData = Object.fromEntries(formData.entries())
-        console.log(plantData)
+        // console.log(plantData)
 
         //send plantdata to the db
         fetch("https://plant-care-server-three.vercel.app/plants",{
@@ -23,7 +23,7 @@ const AddPlant = () => {
         .then(res => res.json())
         .then(data =>{
             if(data.insertedId){
-            console.log("after adding plant to db",data) 
+            // console.log("after adding plant to db",data) 
             Swal.fire({
   title: "Plant Added Successfull!",
   icon: "success",

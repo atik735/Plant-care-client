@@ -13,7 +13,7 @@ const UpdatePlants = () => {
         const form = e.target;
         const formData = new FormData(form);
         const plantData = Object.fromEntries(formData.entries())
-        console.log(plantData)
+        // console.log(plantData)
 
          //send updated coffe to the server
         fetch(`https://plant-care-server-three.vercel.app/plants/${id}`,{
@@ -27,7 +27,7 @@ const UpdatePlants = () => {
         .then(data => {
             if (data.modifiedCount) {
                 // setPlant(data)
-                console.log(data);
+                // console.log(data);
                 Swal.fire({
                     title: "Coffe Updated successfully!",
                     icon: "success",

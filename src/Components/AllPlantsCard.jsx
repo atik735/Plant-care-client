@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 const AllPlantsCard = ({ plant }) => {
-    console.log(plant)
+    // console.log(plant)
   return (
     <div>
       <div className="card bg-base-100 h-full w-full shadow-sm">

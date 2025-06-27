@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router';
 
 const Details = () => {
     const detailsData = useLoaderData();
-    console.log(detailsData);
+    // console.log(detailsData);
 
     return (
         <div className="flex justify-center p-4">

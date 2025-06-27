@@ -23,7 +23,7 @@ const MyPlantsForm = ({plants,ePlants,setEplants}) => {
     })
     .then(res => res.json())
     .then(data => {
-            console.log("Delete response:", data);
+            // console.log("Delete response:", data);
 
         if (data.deletedCount) {
             const newPlants = ePlants.filter(plant => plant._id !== _id)

@@ -1,12 +1,101 @@
-# React + Vite
+# 🌱 Plant Care Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack, mobile-responsive web application to help users efficiently manage and monitor care for their houseplants.
 
-Currently, two official plugins are available:
+🔗 **Live Site:** https://plant-care-client.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧾 Overview
+
+Plant Care Tracker allows users to track daily care activities such as watering, fertilizing, and monitoring the health of indoor and outdoor plants. With secure authentication and a responsive UI, it’s the perfect digital assistant for plant lovers.
+
+---
+
+## 🚀 Tech Stack
+
+* **Frontend:** React, Tailwind CSS, DaisyUI, React Router, Axios
+* **Backend:** Node.js, Express.js, MongoDB, JWT
+* **Auth:** Firebase Authentication (Email/Password + Google)
+* **Additional Tools:** React Hook Form, Toastify, Lottie, Date-fns, React Tooltip
+
+---
+
+## ✨ Features
+
+* 🪴 Add, view, update, and delete your plants with full CRUD functionality
+* 🔐 Secure user authentication with protected routes
+* 📆 Log and track watering schedules, health status, and care levels
+* 🌙 Dark/Light theme toggle
+* 🔍 Sort plants by Next Watering Date or Care Level
+* 🖼️ Modern UI with responsive design and slider banner
+* 🧾 Real-time feedback via styled toast messages and confirmation modals
+
+---
+
+## 🔗 Relevant Links
+
+* [Client Repo](https://github.com/atik735/Plant-care-client)
+* [Server Repo](https://github.com/atik735/Plant-care-cerver)
+* [Live Website](https://plant-care.vercel.app)
+
+---
+
+## 📦 Dependencies
+
+### Client
+
+* react
+* react-router-dom
+* tailwindcss
+* daisyui
+* axios
+* react-hook-form
+* react-toastify
+* lottie-react
+* date-fns
+* react-tooltip
+
+### Server
+
+* express
+* cors
+* dotenv
+* mongodb
+* jsonwebtoken
+
+---
+
+## 🧪 Local Setup Guide
+
+### 🖥️ Client:
+
+```bash
+git clone https://github.com/atik735/Plant-care-client.git
+cd Plant-Care-Client
+npm install
+npm run dev
+```
+
+### 🗂️ Server:
+
+```bash
+git clone https://github.com/atik735/Plant-care-server.git
+cd Plant-Care-Server
+npm install
+npm run dev
+```
+
+Add `.env` files for both client and server with appropriate credentials.
+
+---
+
+## 🤝 Acknowledgement
+
+Thanks to the team at Programming Hero and community feedback that shaped this project.
+
+---
+
+*“Take care of your plants, and they’ll take care of your space.” – Atik Hassan*

@@ -44,7 +44,7 @@ const UpdatePlants = () => {
     return (
 <div className="flex justify-center items-center mt-5 mb-5 w-full">
   <div className="w-full p-8 space-y-6 rounded-xl bg-green-100 text-gray-800 shadow-lg">
-    <h1 className="text-2xl font-bold text-center">Add Plant Details</h1>
+    <h1 className="text-2xl font-bold text-center">Update Plant Details</h1>
     <form className="space-y-6" onSubmit={handleUpdate}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Image URL */}

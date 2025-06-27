@@ -1,51 +1,114 @@
-import React from 'react';
-import { FaFacebook, FaInstagram, FaGithub } from "react-icons/fa";
-import { Link } from 'react-router';
+import React, { useContext } from 'react';
+import logo from '../assets/logo.png'
+import { Link, NavLink } from 'react-router';
+import { CiFacebook } from "react-icons/ci";
+import { FaInstagram } from "react-icons/fa";
+import { TiSocialGooglePlus } from "react-icons/ti";
+import { TiSocialLinkedinCircular } from "react-icons/ti";
+import { AiOutlineYoutube } from "react-icons/ai";
+import { motion } from "motion/react";
+import { AuthContext } from '../Contexts/AuthContext';
+
 
 const Footer = () => {
+
+  const {user} = useContext(AuthContext)
+
+      const links = <>
+  <li><NavLink to='/' className={({ isActive }) =>
+          isActive
+            ? " text-green-600 font-bold  "
+            : "text-gray-500 font-medium"
+        }
+>Home</NavLink></li>
+  <li><NavLink to='/allplants' className={({ isActive }) =>
+          isActive
+            ? " text-green-600 font-bold"
+            : "text-gray-500 font-medium"
+        }
+>All Plants</NavLink></li>
+  <li><NavLink to='/aboutUs' className={({ isActive }) =>
+          isActive
+            ? " text-green-600 font-bold  "
+            : "text-gray-500 font-medium"
+        }
+>About Us</NavLink></li>
+  <li><NavLink to='/contactUs' className={({ isActive }) =>
+          isActive
+            ? " text-green-600 font-bold  "
+            : "text-gray-500 font-medium"
+        }
+>Contact Us</NavLink></li>
+  <li><NavLink to='/terms' className={({ isActive }) =>
+          isActive
+            ? " text-green-600 font-bold  "
+            : "text-gray-500 font-medium"
+        }
+>Terms & Condition</NavLink></li>
+
+{user && <>
+  
+    <li><NavLink to='/dashboard' className={({ isActive }) =>
+            isActive
+              ? " text-green-600 font-bold  "
+              : "text-gray-500 font-medium"
+          }
+  >Dashboard</NavLink></li>
+
+
+</>
+}
+</>
     return (
-<footer className="border border-green-200 shadow-md bg-green-100
- text-gray-900 p-6">
-        <h2 className='text-2xl font-bold text-center my-2'>Plant Care</h2>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {/* Contact Details */}
-        <div>
-          <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
-          <p>Email: contact@plantcare.com</p>
-          <p>Phone: +1 (123) 456-7890</p>
-          <p>Address: 123 Room Street, Apt City</p>
-        </div>
-
-        {/* Terms & Conditions */}
-        <div>
-          <h3 className="text-lg font-semibold mb-2">Terms & Conditions</h3>
-          <p className="text-sm text-gray-900">
-    Taking care of plants is not just a hobby — it's a way to connect with nature, bring calm into your life, and watch growth happen every day. Whether you're a beginner or a seasoned gardener, My Plants helps you track, nurture, and celebrate your green friends with ease. Let's make every leaf count! 🌿✨
-          </p>
-        </div>
-
-        {/* Social Media Links */}
-        <div>
-          <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
-          <div className="flex gap-4 mt-2">
-            <Link to='https://www.facebook.com/ki.korbi.id.diye' target="_blank" rel="noopener noreferrer">
-              <FaFacebook className="text-2xl hover:text-blue-500" />
-            </Link>
-            <Link to='https://www.instagram.com/atik_h35' target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="text-2xl hover:text-pink-500" />
-            </Link>
-            <Link to='https://github.com/atik735' target="_blank" rel="noopener noreferrer">
-              <FaGithub className="text-2xl hover:text-gray-400" />
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="text-center mt-6 text-sm text-gray-900">
-        &copy;🌿{new Date().getFullYear()} My Plants. Nurture Nature, Grow with Love. 🌱
-All rights reserved.
-      </div>
-    </footer>
+<footer className="footer footer-horizontal gap-y-0 footer-center bg-green-50 p-10 space-y-2 leading-4 mt-3">
+  <aside className='space-y-1'>
+  <motion.img 
+  animate={{
+    scale: [1, 1.05, 1],
+  }}
+  transition={{
+    duration: 2,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  className='w-14 h-14' src={logo} alt="" />
+    <p className=" ">
+      PlantCare.
+      </p>
+      <p className='text-gray-700 py-2'>
+PlantCare is where greenery meets community — helping you grow, share, and <br />connect through every leaf.
+    </p>
+  </aside>
+    <nav>
+    <div className="grid grid-flow-col gap-4 ">
+      <Link className='hover:text-green-600' to={"https://www.facebook.com/ki.korbi.id.diye"}>
+      <CiFacebook size={30}/>
+      </Link>
+      <Link className='hover:text-green-600' to={"https://www.instagram.com/atik_h35/"}>
+<FaInstagram size={30}/>
+      </Link>
+      <Link className='hover:text-green-600' to={"https://www.google.com/"}>
+<TiSocialGooglePlus size={30}/>
+      </Link>
+      <Link className='hover:text-green-600' to={"https://www.linkedin.com/"}>
+<TiSocialLinkedinCircular size={30}/>
+      </Link>
+      <Link className='hover:text-green-600' to={"https://www.youtube.com/"}>
+<AiOutlineYoutube size={30}/>
+      </Link>
+    </div>
+  </nav>
+  <nav>
+    <div className="grid grid-flow-col gap-4">
+  <div className="navbar-center hidden lg:flex">
+    <ul className="menu menu-horizontal px-1">
+      {links}
+    </ul>
+  </div>
+    </div>
+  </nav>
+      <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+</footer>
     );
 };
 

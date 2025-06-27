@@ -45,20 +45,31 @@ const MyPlantsForm = ({plants,ePlants,setEplants}) => {
     return (
      <tbody key={plants._id}>
       <tr className='border-b border-opacity-20 text-gray-900 border-gray-300 bg-gray-50'>
-        <td>
+       <td>
           <div className="flex items-center gap-3">
+            <div className="avatar">
+              <div className="mask mask-squircle h-12 w-12">
+                <img
+                  src={plants.photo}
+                  alt="Plants" />
+              </div>
+            </div>
             <div>
               <div className="font-bold">{plants.name}</div>
+              <div className="text-sm opacity-50">{plants.healthStatus}</div>
             </div>
           </div>
         </td>
         <td>
-          {plants.category}
+          <p>{plants.nextWatering}</p>
+        </td>
+        <td>
+          <p>{plants.category}</p>
         </td>
         <td className='max-sm:text-center'>{plants.wateringFrequency}</td>
-        <th>
+        <th className='flex '>
           <Link
-          to={`/updatePlants/${plants._id}`}
+          to={`/dashboard/updatePlants/${plants._id}`}
           className="text-white bg-green-600 mr-2 hover:bg-green-700 p-2 rounded max-md:block text-center max-md:whitespace-nowrap"
           ><button>Update</button></Link>
           <button className="text-white bg-green-600 hover:bg-green-700 p-2 rounded max-md:block text-center max-md:whitespace-nowrap"

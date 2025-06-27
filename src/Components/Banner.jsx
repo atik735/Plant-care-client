@@ -33,7 +33,7 @@ const bannerSlides = [
 
 
   return (
-    <div className="mb-10 px-4 md:px-8">
+    <div>
       <Swiper
         modules={[Autoplay, Navigation]}
         autoplay={{ delay: 3000 }}
@@ -43,7 +43,7 @@ const bannerSlides = [
       >
         {bannerSlides.map(slide => (
           <SwiperSlide key={slide.id}>
-            <div className="relative h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden">
+            <div className="relative h-[400px] mt-2 md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden">
               <img
                 src={slide.image}
                 alt={slide.title}

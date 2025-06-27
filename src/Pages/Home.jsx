@@ -5,6 +5,8 @@ import NewPlants from '../Components/NewPlants';
 import PlantCareMistakes from '../Components/PlantCareMistakes';
 import FriendlyPlants from '../Components/FriendlyPlants';
 import { format } from 'date-fns';
+import Review from '../Components/Review';
+import { TopRatedSection } from '../Components/TopRated';
 
 const Home = () => {
     const plantsData = useLoaderData()
@@ -14,7 +16,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
 
-     <div className=" mx-auto px-4 py-12 rounded-2xl md:px-8 my-10 bg-green-100">
+     <div className=" mx-auto px-4 py-12 rounded-2xl md:px-8 my-5 ">
         <div className='text-center space-y-1 mb-6'>
         <h2 className="text-2xl md:text-3xl font-bold text-green-600">🌿 New Plants</h2>
         <p className='text-gray-600'>Rooted in peace, growing with purpose</p>
@@ -30,6 +32,9 @@ const Home = () => {
         <PlantCareMistakes></PlantCareMistakes>
 
         <FriendlyPlants></FriendlyPlants>
+
+        <Review></Review>
+        <TopRatedSection></TopRatedSection>
 
 
         </div>

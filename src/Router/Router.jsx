@@ -12,6 +12,13 @@ import MyPlants from "../Pages/MyPlants";
 import PrivateRoute from "../Contexts/PrivateRoute";
 import Details from "../Components/Details";
 import UpdatePlants from "../Components/UpdatePlants";
+import AboutUs from "../Pages/AboutUs";
+import ContactUs from "../Pages/ContactUs";
+import TermsAndCon from "../Pages/TermsAndCon";
+import AllPlantsCrd from "../Pages/AllPlantsCrd";
+import DashboardLayout from "../Root/DashboardLayout";
+import DasHome from "../Pages/DasHome";
+import MyProfile from "../Pages/MyProfile";
 
 export const router = createBrowserRouter([
     {
@@ -28,8 +35,20 @@ export const router = createBrowserRouter([
         path:"allplants",
          loader:() => fetch("https://plant-care-server-three.vercel.app/plants"),
         hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
-        Component:AllPlants
+        Component:AllPlantsCrd
       },
+      {
+        path:"aboutUs",
+        Component: AboutUs
+      },
+      {
+        path:"contactUs",
+        Component: ContactUs
+     },
+      {
+        path:"terms",
+        Component: TermsAndCon
+     },
       {
         path:"details/:id",
 
@@ -40,28 +59,7 @@ export const router = createBrowserRouter([
           <Details></Details>
         </PrivateRoute>
       },
-      {
-        path:"addplant",
-        element:<PrivateRoute>
-          <AddPlant></AddPlant>
-        </PrivateRoute>
-      },
-      {
-        path: "myplants/email/:email",
-        loader:({params}) => fetch(`https://plant-care-server-three.vercel.app/plants/email/${params.email}`),
-        hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
-        element:<PrivateRoute>
-          <MyPlants></MyPlants>
-        </PrivateRoute>
-      },
-      {
-        path: "updatePlants/:id",
-        loader: ({ params }) =>
-          fetch(`https://plant-care-server-three.vercel.app/plants/${params.id}`),
 
-        hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
-        Component: UpdatePlants,
-      },
       {
       path:"/login",
       Component:Login
@@ -72,4 +70,53 @@ export const router = createBrowserRouter([
     }
     ]
   },
+    {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    errorElement:<ErrorPage></ErrorPage>,
+    children: [
+      {
+        index:true,
+        Component: DasHome
+      },
+      {
+        path:"/dashboard/allplants",
+         loader:() => fetch("https://plant-care-server-three.vercel.app/plants"),
+        hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
+        Component:AllPlants
+      },
+      {
+        path: "/dashboard/myplants/email/:email",
+        loader:({params}) => fetch(`https://plant-care-server-three.vercel.app/plants/email/${params.email}`),
+        hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
+        element:<PrivateRoute>
+          <MyPlants></MyPlants>
+        </PrivateRoute>
+      },
+      {
+        path:"/dashboard/addplant",
+        element:<PrivateRoute>
+          <AddPlant></AddPlant>
+        </PrivateRoute>
+      },
+      {
+        path:"/dashboard/myprofile",
+        element:<PrivateRoute>
+          <MyProfile></MyProfile>
+        </PrivateRoute>
+      },
+      {
+        path: "/dashboard/updatePlants/:id",
+        loader: ({ params }) =>
+          fetch(`https://plant-care-server-three.vercel.app/plants/${params.id}`),
+
+        hydrateFallbackElement:(<span className="loading flex justify-center loading-spinner place-self-center loading-xl"></span>),
+        Component: UpdatePlants,
+      },
+    ]
+  }
 ]);

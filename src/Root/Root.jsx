@@ -6,17 +6,13 @@ import Footer from "../Components/Footer";
 const Root = () => {
   return (
     <div>
-      <header>
         <Navbar></Navbar>
-      </header>
       <main className="min-h-[calc(100vh-116px)]">
-        <div className="w-11/12 mx-auto my-8 ">
+        <div className="w-11/12 mx-auto ">
     <Outlet></Outlet>
         </div>
       </main>
-      <footer>
         <Footer></Footer>
-      </footer>
     </div>
   );
 };

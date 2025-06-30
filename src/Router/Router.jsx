@@ -60,17 +60,17 @@ export const router = createBrowserRouter([
         </PrivateRoute>
       },
 
-      {
-      path:"/login",
-      Component:Login
-    },
-    {
-      path:"/register",
-      Component:Register
-    }
     ]
   },
-    {
+  {
+  path:"/login",
+  Component:Login
+},
+{
+  path:"/register",
+  Component:Register
+},
+  {
     path: "/dashboard",
     element: (
       <PrivateRoute>

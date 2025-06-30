@@ -145,7 +145,7 @@ const Login = (e) => {
           <div>
             <button
               type="submit"
-              className="w-full px-8 py-3 cursor-pointer font-semibold rounded-md bg-violet-600 text-gray-50"
+              className="w-full px-8 py-3 cursor-pointer font-semibold rounded-md bg-green-600 text-gray-50"
             >
               Sign in
             </button>
@@ -159,11 +159,12 @@ const Login = (e) => {
           </div>
           <p className="px-6 text-sm text-center text-gray-600">
             Don't have an account yet?
-            <Link to="/register" className="underline text-violet-600">
+            <Link to="/register" className="underline text-green-600">
               Register
             </Link>
             .
           </p>
+          <Link className="btn place-self-center" to={"/"}>Go Back Home</Link>
         </div>
       </form>
     </div>
